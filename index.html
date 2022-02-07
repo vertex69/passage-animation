@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale
+    =1.0">
     <link rel="stylesheet" href="em.css">
     <link rel="stylesheet" href="custom.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -65,6 +66,14 @@
                     <div class="flex fifteen height-90 justify-between align-center">
                         <div
                             class="dark-component height-100 nine mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
+                            <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
+                                <div class="fourteen height-100 flex justify-between align-center">
+                                    <p class="fontsize22">Map</p>
+                                    <span class="material-icons">
+                                        more_horiz
+                                    </span>
+                                </div>
+                            </div>
                             <div class="sixteen height-100 z-1 absolute">
                                 <img class="cover"
                                     src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644237736/passage/mock-image-map_ycbeee.png"
@@ -72,13 +81,75 @@
                             </div>
                         </div>
                         <div class="height-100 flex column seven ml12">
-                            <div class="dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke flex super-centered">
-                                <div class="relative height-100 five">
-                                    <canvas id="myChart"></canvas>
+                            <div
+                                class="dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke flex super-centered relative column">
+                                <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
+                                    <div class="fourteen height-100 flex justify-between align-center">
+                                        <p class="fontsize22">Statistics</p>
+                                        <span class="material-icons">
+                                            more_horiz
+                                        </span>
+                                    </div>
                                 </div>
-
+                                <div class="height-70 sixteen flex super-centered">
+                                    <div class="height-100 four mr20 relative">
+                                        <div class="absolute height-100 sixteen flex super-centered">
+                                            <p>350 ships</p>
+                                        </div>
+                                        <div class="relative height-100 sixteen">
+                                            <canvas id="pie"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="relative height-70 nine">
+                                        <canvas id="bar"></canvas>
+                                    </div>
+                                </div>
+                                <div class="flex width fourteen justify-between">
+                                    <div class="flex super-centered five">
+                                        <p>Permitted</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-green">
+                                                trending_up
+                                            </span>
+                                            <div class="green radius10 plr5 ptb0">
+                                                <p>62%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex super-centered five">
+                                        <p>Monitoring</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-red">
+                                                trending_down
+                                            </span>
+                                            <div class="red radius10 plr5 ptb0">
+                                                <p>25%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex super-centered five">
+                                        <p>Unregistered</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-red">
+                                                trending_down
+                                            </span>
+                                            <div class="red radius10 plr5 ptb0">
+                                                <p>13%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke">&nbsp;
+                            <div
+                                class="dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex">
+                                <div class="flex super-centered sixteen align-center absolute z1 height-80px">
+                                    <div class="fourteen height-100 flex justify-between align-center">
+                                        <p class="fontsize22">Ships Detected On the Given Area</p>
+                                        <span class="material-icons">
+                                            more_horiz
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,38 +163,130 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        const ctx = document.getElementById('myChart');
-        const myChart = new Chart(ctx, {
+        // colors
+        const red = "#ff3452"
+        const green = "#23e8a1"
+        const yellow = "#fbc059"
+        const stroke = "#263241"
+
+        const barChart = document.getElementById('bar');
+        const pieChart = document.getElementById('pie');
+        const pie = new Chart(pieChart, {
             type: 'doughnut',
             data: {
                 labels: [
-                    'Red',
-                    'Blue',
+                    'Unregistered/Illegal Vessels',
+                    'Legally Permitted',
+                    'Permitted but Monitoring'
                 ],
                 datasets: [{
                     label: 'My First Dataset',
-                    data: [30, 60],
+                    data: [30, 60, 10],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(38, 50, 65)',
+                        red,
+                        green,
+                        yellow
+
                     ],
                     hoverOffset: 4
                 }]
             },
             options: {
-                cutout: 70,
+                cutout: 40,
                 responsive: true,
                 maintainAspectRatio: false,
                 elements: {
                     arc: {
-                        borderWidth: 0
+                        borderWidth: 0,
                     },
                 },
                 plugins: {
                     legend: {
                         display: false
                     },
-                }
+                },
+            }
+        });
+
+        const bar = new Chart(barChart, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'APAC RE Index',
+                    backgroundColor: red,
+                    borderColor: red,
+                    fill: false,
+                    tension: .5,
+                    data: [
+                        300,
+                        50,
+                        200,
+                        20,
+                        50,
+                        150,
+                        100,
+
+
+                    ],
+                }, {
+                    label: 'APAC PME',
+                    backgroundColor: green,
+                    borderColor: green,
+                    fill: false,
+                    tension: .5,
+                    data: [
+                        50,
+                        300,
+                        100,
+                        450,
+                        150,
+                        200,
+                        300
+                    ],
+
+                }, {
+                    label: 'APAC PME',
+                    backgroundColor: yellow,
+                    borderColor: yellow,
+                    fill: false,
+                    tension: .5,
+                    data: [
+                        70,
+                        450,
+                        100,
+                        250,
+                        80,
+                    ],
+
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Chart.js Line Chart - Logarithmic'
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: stroke,
+                            borderColor: stroke
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: stroke,
+                            borderColor: stroke
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
             }
         });
     </script>
