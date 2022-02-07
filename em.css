@@ -104,8 +104,14 @@ body {
 .justify-right {
   justify-content: right;
 }
+.justify-left {
+  justify-content: left;
+}
 .align-center {
   align-items: center;
+}
+.align-bottom {
+  align-items: flex-end;
 }
 .column {
   flex-direction: column;
@@ -341,6 +347,9 @@ body {
 /* overflows */
 .overflow-hidden {
   overflow: hidden;
+}
+.scroll {
+  overflow-y: scroll;
 }
 
 /* transform */

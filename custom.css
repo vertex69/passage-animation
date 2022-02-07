@@ -1,4 +1,36 @@
 /* custom */
 body {
-    background-color: rgb(7, 7, 7);
+  background-color: rgb(7, 7, 7);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1a212b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2e3a4b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.w3-table td {
+    padding: 20px 10px!important;
+}
+
+.w3-bordered tr {
+    border-bottom: solid 1px #39495c!important;
+}
+
+tbody {
+    color: rgb(172, 172, 172)!important;
 }
