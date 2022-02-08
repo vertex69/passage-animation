@@ -13,24 +13,24 @@
 </head>
 
 <body class="text-white">
-    <div class="flex super-centered height-100vh sixteen">
-        <div class="dark-base relative height-100 fifteen scale70">
+    <div class="container flex super-centered height-100vh sixteen">
+        <div class="ui-container dark-base relative height-100 fifteen scale70">
             <!-- top menu -->
-            <div id="menu" class="dark-component sixteen absolute z2 height-60px flex">
+            <div id="top-menu" class="top-menu dark-component sixteen absolute z2 height-60px flex">
                 <div class="flex two super-centered dark-stroke">
-                    <div class="ten">
-                        <img class="contain"
+                    <div class="logo-container ten">
+                        <img class="logo contain"
                             src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644224875/passage/passage_myfxm9.png"
                             alt="">
                     </div>
                 </div>
                 <div class="flex fourteen justify-right align-center">
                     <div class="flex one text-dirty-white dark-stroke-right super-centered">
-                        <span class="material-icons">
+                        <span class="message-button material-icons">
                             email
                         </span>
                     </div>
-                    <div class="flex two super-centered">
+                    <div class="account flex two super-centered">
                         <p class="font-16">Skipper</p>
                         <span class="material-icons">
                             arrow_drop_down
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <!-- side menu -->
-            <div class="height-100 flex">
+            <div class="side-menu height-100 flex">
                 <div class="dark-component dark-stroke two flex column pt60">
                     <ul class=" height-40 flex column justify-between">
                         <li class="align-center flex height-60px pl30">
@@ -63,10 +63,10 @@
                     </ul>
                 </div>
                 <!-- content -->
-                <div class="flex super-centered fourteen pt60">
-                    <div class="flex fifteen height-90 justify-between align-center">
+                <div class="content flex super-centered fourteen pt60">
+                    <div class="card-container flex fifteen height-90 justify-between align-center">
                         <div
-                            class="dark-component height-100 nine mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
+                            class="map card dark-component height-100 nine mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
                             <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
                                 <div class="fourteen height-100 flex justify-between align-center">
                                     <p class="fontsize22">Map</p>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="height-100 flex column seven ml12">
                             <div
-                                class="dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke flex super-centered relative column">
+                                class="stats card dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke flex super-centered relative column">
                                 <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
                                     <div class="fourteen height-100 flex justify-between align-center">
                                         <p class="fontsize22">Statistics</p>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div
-                                class="dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex">
+                                class="list card dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex">
                                 <div class="flex super-centered sixteen align-center absolute z1 height-80px">
                                     <div class="fourteen height-100 flex justify-between align-center">
                                         <p class="fontsize22">Ships Detected On the Given Area</p>
@@ -290,134 +290,7 @@
         integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-        // colors
-        const red = "#ff3452"
-        const green = "#23e8a1"
-        const yellow = "#fbc059"
-        const stroke = "#263241"
-
-        const barChart = document.getElementById('bar');
-        const pieChart = document.getElementById('pie');
-        const pie = new Chart(pieChart, {
-            type: 'doughnut',
-            data: {
-                labels: [
-                    'Unregistered/Illegal Vessels',
-                    'Legally Permitted',
-                    'Permitted but Monitoring'
-                ],
-                datasets: [{
-                    label: 'My First Dataset',
-                    data: [30, 60, 10],
-                    backgroundColor: [
-                        red,
-                        green,
-                        yellow
-
-                    ],
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                cutout: 40,
-                responsive: true,
-                maintainAspectRatio: false,
-                elements: {
-                    arc: {
-                        borderWidth: 0,
-                    },
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                },
-            }
-        });
-
-        const bar = new Chart(barChart, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May'],
-                datasets: [{
-                    label: 'APAC RE Index',
-                    backgroundColor: red,
-                    borderColor: red,
-                    fill: false,
-                    tension: .5,
-                    data: [
-                        300,
-                        50,
-                        200,
-                        20,
-                        50,
-                        150,
-                        100,
-
-
-                    ],
-                }, {
-                    label: 'APAC PME',
-                    backgroundColor: green,
-                    borderColor: green,
-                    fill: false,
-                    tension: .5,
-                    data: [
-                        50,
-                        300,
-                        100,
-                        450,
-                        150,
-                        200,
-                        300
-                    ],
-
-                }, {
-                    label: 'APAC PME',
-                    backgroundColor: yellow,
-                    borderColor: yellow,
-                    fill: false,
-                    tension: .5,
-                    data: [
-                        70,
-                        450,
-                        100,
-                        250,
-                        80,
-                    ],
-
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                title: {
-                    display: true,
-                    text: 'Chart.js Line Chart - Logarithmic'
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            color: stroke,
-                            borderColor: stroke
-                        }
-                    },
-                    y: {
-                        grid: {
-                            color: stroke,
-                            borderColor: stroke
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                },
-            }
-        });
-    </script>
+    <script src="chart.js"></script>
 </body>
 
 </html>
