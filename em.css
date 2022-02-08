@@ -86,6 +86,9 @@ body {
 .radius-infinite {
   border-radius: 10000%;
 }
+.radius-tops-only {
+  border-radius: 50px 50px 0 0;
+}
 
 /* text colors */
 .text-white {
@@ -113,6 +116,15 @@ body {
 }
 .font-16 {
   font-size: 16px;
+}
+
+/* display */
+/* block */
+.block {
+  display: block;
+}
+.display-none {
+  display: none;
 }
 
 /* flex */
@@ -155,6 +167,9 @@ body {
 }
 
 /* flex grid */
+.half {
+  width: 3.125%;
+}
 .one {
   width: 6.25%;
 }
@@ -451,11 +466,17 @@ body {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
 .scroll {
   overflow-y: scroll;
 }
 
 /* transform */
+.scale40 {
+  transform: scale(0.4);
+}
 .scale60 {
   transform: scale(0.6);
 }
@@ -465,3 +486,12 @@ body {
 .scale80 {
   transform: scale(0.8);
 }
+
+/* .perspective-100px {
+  perspective: 1000px;
+}
+
+.rotate45 {
+  transform: rotateX(10deg);
+  transform: rotateY(3deg);
+} */
