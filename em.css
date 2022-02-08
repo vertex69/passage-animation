@@ -291,6 +291,14 @@ body {
   height: 100px;
 }
 
+.min-width120em {
+  min-width: 120em;
+}
+
+.min-height500px {
+  min-height: 1000px;
+}
+
 /* fullwidth and height */
 .full {
   width: 100%;

@@ -14,7 +14,8 @@
 
 <body class="text-white">
     <div class="container flex super-centered height-100vh sixteen">
-        <div class="ui-container dark-base relative height-100 sixteen scale60">
+        <div
+            class="ui-container dark-base relative height-100 sixteen scale60 radius10 overflow-hidden min-width120em min-height500px">
             <!-- top menu -->
             <div id="top-menu" class="top-menu dark-component sixteen absolute z2 height-60px flex">
                 <div class="flex two super-centered dark-stroke">
@@ -29,7 +30,8 @@
                         <span class="material-icons mr12">
                             menu
                         </span>
-                        <input class="radius10 plr20 height-40px dark-base2 no-border text-dirty-white" type="text" placeholder="Search..">
+                        <input class="radius10 plr20 height-40px dark-base2 no-border text-dirty-white" type="text"
+                            placeholder="Search..">
                     </div>
                     <div class="four flex justify-right">
                         <div class="flex four text-dirty-white dark-stroke-right super-centered">
@@ -124,9 +126,42 @@
                                     fullscreen
                                 </span>
                             </div>
-                            <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
+                            <div class="flex super-centered sixteen absolute z1 top0 height-80px">
                                 <div class="fourteen height-100 flex justify-between align-center">
                                     <p class="fontsize22">Map</p>
+                                    <div class="flex text-dirty-white">
+                                        <div
+                                            class="dark-base2 radius10 height-40px flex super-centered plr5 ptb20 mr12">
+                                            <div class="flex super-centered  mr12">
+                                                <span class="material-icons mr8">
+                                                    edit_calendar
+                                                </span>
+                                                <p class="text-dirty-white">
+                                                    08.01.21 - 08.15.21
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="material-icons">
+                                                    arrow_drop_down
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="dark-base2 radius10 height-40px flex super-centered plr5 ptb20">
+                                            <div class="flex super-centered  mr12">
+                                                <span class="material-icons mr8">
+                                                    directions_boat
+                                                </span>
+                                                <p class="text-dirty-white">
+                                                    MARINA - 56489
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="material-icons">
+                                                    arrow_drop_down
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <span class="material-icons">
                                         more_horiz
                                     </span>
@@ -352,6 +387,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="chart.js"></script>
+    <script src="animation.js"></script>
 </body>
-
 </html>
