@@ -34,3 +34,7 @@ body {
 tbody {
     color: rgb(172, 172, 172)!important;
 }
+
+.active {
+  background-color: #2F3A46;
+}

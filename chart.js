@@ -27,9 +27,8 @@ const pie = new Chart(pieChart, {
         }]
     },
     options: {
-        cutout: 40,
+        cutout: 60,
         responsive: true,
-        maintainAspectRatio: false,
         elements: {
             arc: {
                 borderWidth: 0,

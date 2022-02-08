@@ -14,7 +14,7 @@
 
 <body class="text-white">
     <div class="container flex super-centered height-100vh sixteen">
-        <div class="ui-container dark-base relative height-100 fifteen scale70">
+        <div class="ui-container dark-base relative height-100 sixteen scale60">
             <!-- top menu -->
             <div id="top-menu" class="top-menu dark-component sixteen absolute z2 height-60px flex">
                 <div class="flex two super-centered dark-stroke">
@@ -24,49 +24,106 @@
                             alt="">
                     </div>
                 </div>
-                <div class="flex fourteen justify-right align-center">
-                    <div class="flex one text-dirty-white dark-stroke-right super-centered">
-                        <span class="message-button material-icons">
-                            email
+                <div class="flex fourteen justify-between align-center plr30">
+                    <div class="flex super-centered">
+                        <span class="material-icons mr12">
+                            menu
                         </span>
+                        <input class="radius10 plr20 height-40px dark-base2 no-border text-dirty-white" type="text" placeholder="Search..">
                     </div>
-                    <div class="account flex two super-centered">
-                        <p class="font-16">Skipper</p>
-                        <span class="material-icons">
-                            arrow_drop_down
-                        </span>
+                    <div class="four flex justify-right">
+                        <div class="flex four text-dirty-white dark-stroke-right super-centered">
+                            <span class="message-button material-icons">
+                                email
+                            </span>
+                        </div>
+                        <div class="account flex six super-centered">
+                            <div class="red square30 flex super-centered radius-infinite mr8">
+                                S
+                            </div>
+                            <p class="font-16">Skipper</p>
+                            <span class="material-icons">
+                                arrow_drop_down
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- side menu -->
             <div class="side-menu height-100 flex">
                 <div class="dark-component dark-stroke two flex column pt60">
-                    <ul class=" height-40 flex column justify-between">
-                        <li class="align-center flex height-60px pl30">
-                            <p>Dashboard</p>
+                    <ul class=" height-50 flex column justify-between">
+                        <li class="align-center flex column">
+                            <div
+                                class="flex super-centered height-100 height-60px sixteen active radius5 justify-between plr20">
+                                <div class="flex super-centered">
+                                    <span class="material-icons">
+                                        space_dashboard
+                                    </span>
+                                    <p class="ml5">Dashboard</p>
+                                </div>
+                                <div>
+                                    <span class="material-icons">
+                                        arrow_drop_down
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="sixteen flex pb10 text-dirty-white">
+                                <ul class="flex column pl60 flex column">
+                                    <li class="height-30px">Map</li>
+                                    <li class="height-30px">Stats</li>
+                                    <li class="height-30px">Ship Lists</li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="align-center flex height-60px pl30">
-                            <p>Communications</p>
+                        <li class="align-center flex height-60px plr20 justify-between radius5">
+                            <div class="flex super-centered">
+                                <span class="material-icons">
+                                    feedback
+                                </span>
+                                <p class="ml5">Communications</p>
+                            </div>
+                            <div class="radius10 red plr5">
+                                <p>35</p>
+                            </div>
                         </li>
-                        <li class="align-center flex height-60px pl30">
-                            <p>My Zones</p>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="material-icons">
+                                egg_alt
+                            </span>
+                            <p class="ml5">My Zones</p>
                         </li>
-                        <li class="align-center flex height-60px pl30">
-                            <p>Reports</p>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="material-icons">
+                                report
+                            </span>
+                            <p class="ml5">Reports</p>
                         </li>
-                        <li class="align-center flex height-60px pl30">
-                            <p>Passage CRM</p>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="material-icons">
+                                contact_page
+                            </span>
+                            <p class="ml5">Passage CRM</p>
                         </li>
-                        <li class="align-center flex height-60px pl30">
-                            <p>Admin Settings</p>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="material-icons">
+                                admin_panel_settings
+                            </span>
+                            <p class="ml5">Admin Settings</p>
                         </li>
                     </ul>
                 </div>
                 <!-- content -->
                 <div class="content flex super-centered fourteen pt60">
                     <div class="card-container flex fifteen height-90 justify-between align-center">
+                        <!-- map card -->
                         <div
                             class="map card dark-component height-100 nine mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
+                            <div class="absolute z2 bottom30px right30px">
+                                <span class="material-icons" style="font-size: 40px;">
+                                    fullscreen
+                                </span>
+                            </div>
                             <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
                                 <div class="fourteen height-100 flex justify-between align-center">
                                     <p class="fontsize22">Map</p>
@@ -75,6 +132,8 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="filter absolute z1 full" style="background-color: rgba(22, 21, 48, 0.11);">
+                                &nbsp;</div>
                             <div class="sixteen height-100 z-1 absolute">
                                 <img class="cover"
                                     src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644237736/passage/mock-image-map_ycbeee.png"
@@ -82,6 +141,7 @@
                             </div>
                         </div>
                         <div class="height-100 flex column seven ml12">
+                            <!-- statistic card -->
                             <div
                                 class="stats card dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke flex super-centered relative column">
                                 <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
@@ -93,11 +153,11 @@
                                     </div>
                                 </div>
                                 <div class="height-70 sixteen flex super-centered">
-                                    <div class="height-100 four mr20 relative">
+                                    <div class="height-100 four mr20 relative flex super-centered">
                                         <div class="absolute height-100 sixteen flex super-centered">
                                             <p>350 ships</p>
                                         </div>
-                                        <div class="relative height-100 sixteen">
+                                        <div class="relative height-100 fifteen flex super-centered">
                                             <canvas id="pie"></canvas>
                                         </div>
                                     </div>
@@ -141,8 +201,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- list card -->
                             <div
-                                class="list card dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex">
+                                class="list card dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex pb20">
                                 <div class="flex super-centered sixteen align-center absolute z1 height-80px">
                                     <div class="fourteen height-100 flex justify-between align-center">
                                         <p class="fontsize22">Ships Detected On the Given Area</p>
