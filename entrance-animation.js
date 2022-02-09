@@ -54,7 +54,6 @@ entranceAnim
     1,
     {
       r: 0,
-      from: "center",
       ease: Elastic.easeOut.config(0.5, 0.4),
       stagger: {
         each: 0.2,
@@ -119,14 +118,12 @@ entranceAnim
     },
     1.7
   )
-
   .from(
     "th",
     1,
     {
       opacity: 0,
       y: "-50px",
-      from: "center",
       ease: Elastic.easeOut.config(0.5, 0.4),
       stagger: {
         each: 0.2,
@@ -140,7 +137,6 @@ entranceAnim
     {
       opacity: 0,
       x: "-50px",
-      from: "center",
       ease: Elastic.easeOut.config(0.5, 0.4),
       stagger: {
         each: 0.2,

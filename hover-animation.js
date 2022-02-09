@@ -64,9 +64,9 @@ function cardHover() {
     statsShakes
       .to(
         ship,
-        .5,
+        0.5,
         {
-          count: 359,
+          count: 450,
           ease: Power2.easeOut,
           onUpdate: function () {
             shipCount.innerHTML = Math.round(ship.count);
@@ -75,14 +75,30 @@ function cardHover() {
         0.1
       )
       .to(".main-circles", 1, {
-        strokeDashoffset: 300,
+        strokeDashoffset: gsap.utils.wrap([80,250,350]),
         ease: Elastic.easeOut.config(0.5, 0.4),
       })
       .to(
         ".bars",
         1,
         {
-          height: ["100%","80%","10%","50%","60%","80%","40%","80%","50%","70%","90%","20%","60%","80%","90%"],
+          height: gsap.utils.wrap([
+            "100%",
+            "80%",
+            "10%",
+            "50%",
+            "60%",
+            "80%",
+            "40%",
+            "80%",
+            "50%",
+            "70%",
+            "90%",
+            "20%",
+            "60%",
+            "80%",
+            "90%",
+          ]),
           ease: Elastic.easeOut.config(0.5, 0.4),
           stagger: {
             each: 0.08,
@@ -104,6 +120,7 @@ function cardHover() {
       );
   }
 }
+
 function cardOut() {
   var statsOutAnim = new gsap.timeline();
 
@@ -112,4 +129,66 @@ function cardOut() {
     ease: Elastic.easeOut.config(0.5, 0.4),
     zIndex: 1,
   });
+
+  var statsShakes = new gsap.timeline();
+
+  if (this.id == "stats") {
+    statsShakes
+      .to(
+        ship,
+        0.5,
+        {
+          count: 350,
+          ease: Power2.easeOut,
+          onUpdate: function () {
+            shipCount.innerHTML = Math.round(ship.count);
+          },
+        },
+        0.1
+      )
+      .to(".main-circles", 1, {
+        strokeDashoffset: 300,
+        ease: Elastic.easeOut.config(0.5, 0.4),
+      })
+      .to(
+        ".bars",
+        1,
+        {
+          height: gsap.utils.wrap([
+            "90%",
+            "20%",
+            "60%",
+            "80%",
+            "90%",
+            "100%",
+            "10%",
+            "80%",
+            "60%",
+            "50%",
+            "10%",
+            "50%",
+            "70%",
+            "80%",
+            "30%",
+          ]),
+          ease: Elastic.easeOut.config(0.5, 0.4),
+          stagger: {
+            each: 0.08,
+          },
+        },
+        0.1
+      )
+      .to(
+        ".labels",
+        1,
+        {
+          scale: 1,
+          ease: Elastic.easeOut.config(0.5, 0.4),
+          stagger: {
+            each: 0.2,
+          },
+        },
+        0.1
+      );
+  }
 }
