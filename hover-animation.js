@@ -1,10 +1,6 @@
-var wrapperr = document.querySelector(".wrapper");
 var stats = document.querySelector("#stats");
 var lists = document.querySelector("#list");
 var map = document.querySelector("#map");
-
-wrapperr.addEventListener("mousemove", mouseMoveFunc);
-wrapperr.addEventListener("mouseleave", out);
 
 stats.addEventListener("mouseenter", cardHover);
 stats.addEventListener("mouseleave", cardOut);
@@ -12,6 +8,14 @@ lists.addEventListener("mouseenter", cardHover);
 lists.addEventListener("mouseleave", cardOut);
 map.addEventListener("mouseenter", cardHover);
 map.addEventListener("mouseleave", cardOut);
+
+var wrapperr = document.querySelector(".wrapper");
+wrapperr.addEventListener("mousemove", mouseMoveFunc);
+wrapperr.addEventListener("mouseleave", out);
+
+function onMouseHover () {
+  
+}
 
 let animId = null;
 let $wrapperEl = wrapperr;
@@ -54,6 +58,7 @@ function mouseMoveFunc(evt) {
 function cardHover() {
   var statsHoverAnim = new gsap.timeline();
   var statsShakes = new gsap.timeline();
+  var mapShakes = new gsap.timeline();
 
   statsHoverAnim.to(this, 1, {
     scale: 1.05,
@@ -75,7 +80,7 @@ function cardHover() {
         0.1
       )
       .to(".main-circles", 1, {
-        strokeDashoffset: gsap.utils.wrap([80,250,350]),
+        strokeDashoffset: gsap.utils.wrap([80, 250, 350]),
         ease: Elastic.easeOut.config(0.5, 0.4),
       })
       .to(
@@ -119,18 +124,29 @@ function cardHover() {
         0.1
       );
   }
+  else if (this.id == "map") {
+    mapShakes
+      .to(
+        ".map-image",
+        1,
+        {
+          scale: 1.5,
+        },
+      )
+  }
 }
 
 function cardOut() {
-  var statsOutAnim = new gsap.timeline();
+  var cardHoverOutAnim = new gsap.timeline();
 
-  statsOutAnim.to(this, 1, {
+  cardHoverOutAnim.to(this, 1, {
     scale: 1,
     ease: Elastic.easeOut.config(0.5, 0.4),
     zIndex: 1,
   });
 
   var statsShakes = new gsap.timeline();
+  var mapShakes = new gsap.timeline();
 
   if (this.id == "stats") {
     statsShakes
@@ -190,5 +206,14 @@ function cardOut() {
         },
         0.1
       );
+  } else if (this.id == "map") {
+    mapShakes
+      .to(
+        ".map-image",
+        2,
+        {
+          scale: 1,
+        },
+      )
   }
 }
