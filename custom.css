@@ -1,7 +1,7 @@
 /* custom */
 body {
     background-color: rgb(7, 7, 7);
-    overflow: hidden;
+    overflow: hidden!important;
 }
 
 /* width */
@@ -77,4 +77,11 @@ svg {
 
 .lines {
     border-top: 1px solid #f2f2f27c;
+}
+
+.callout-line {
+    width: 50vw;
+    border-width: 5px;
+    stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
+    stroke-dashoffset: 300;
 }

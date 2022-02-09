@@ -219,6 +219,13 @@ body {
   width: 100%;
 }
 
+.width-2px {
+  width: 2px;
+}
+.width-5px {
+  width: 5px;
+}
+
 /* square */
 .square5 {
   width: 5px;
@@ -304,6 +311,9 @@ body {
 }
 .height-100px {
   height: 100px;
+}
+.height-250px {
+  height: 250px;
 }
 
 .min-width120em {
@@ -492,12 +502,11 @@ body {
 
 /* .perspective-100px {
   perspective: 1000px;
-}
+} */
 
 .rotate45 {
-  transform: rotateX(10deg);
-  transform: rotateY(3deg);
-} */
+  transform: rotate("45deg")!important;
+} 
 
 
 /* cursor */
