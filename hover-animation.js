@@ -1,7 +1,6 @@
 var stats = document.querySelector("#stats");
 var lists = document.querySelector("#list");
 var map = document.querySelector("#map");
-var callout = document.querySelector("#callout");
 
 stats.addEventListener("mouseenter", cardHover);
 stats.addEventListener("mouseleave", cardOut);
@@ -37,11 +36,6 @@ gsap.set($wrapperEl, {
   transformPerspective: 500,
 });
 
-var mousePosition = {
-  mouseX: 0,
-  mouseY: 0,
-};
-
 function mouseMoveFunc(evt) {
   let y = evt.pageX - wrapperOffsetLeft;
   let x = evt.pageY - wrapperOffsetTop;
@@ -55,14 +49,12 @@ function mouseMoveFunc(evt) {
     rotationX: xRotate,
     rotationY: yRotate,
   });
-
-  cardHover(x, y);
 }
 
 var listScrollValue = {
   value: 0,
 };
-function cardHover(x,y) {
+function cardHover() {
   var statsHoverAnim = new gsap.timeline();
   var statsShakes = new gsap.timeline();
   var mapShakes = new gsap.timeline();
@@ -71,20 +63,9 @@ function cardHover(x,y) {
 
   statsHoverAnim.to(this, 1, {
     scale: 1.05,
-    zIndex: 5,
     ease: Elastic.easeOut.config(0.5, 0.4),
   });
   if (this.id == "stats") {
-    gsap.to(mousePosition, 0.5, {
-      mouseX: x,
-      mouseY: y,
-      onUpdate: function () {
-        callout.style.left = mousePosition.mouseY + 50;
-        callout.style.top = mousePosition.mouseX - 300;
-      },
-    });
-
-
     statsShakes
       .to(
         ship,

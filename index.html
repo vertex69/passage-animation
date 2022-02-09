@@ -12,12 +12,11 @@
     <title>Document</title>
 </head>
 
-<body class="text-white pointer overflow-hidden">
-    <div id="callout" class="white height-250px absolute three" style="z-index: 5;">&nbsp;</div>
+<body class="text-white pointer">
     <div id="master-container"
-        class="container wrapper flex super-centered height-100vh sixteen relative perspective-100px scale50 overflow-hidden">
+        class="container wrapper flex super-centered height-100vh sixteen relative perspective-100px scale50">
         <div id="ui-container"
-            class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px">
+            class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px rotate45">
             <!-- top menu -->
             <div id="top-menu" class="top menu dark-component sixteen absolute z2 height-60px flex">
                 <div class="flex two super-centered dark-stroke">
@@ -121,6 +120,18 @@
                 <div class="content flex super-centered fourteen pt60">
                     <div class="card-container flex fifteen height-90 justify-between align-center">
                         <!-- map card -->
+
+                        <div id="map-popup" class="absolute z-2 top0 left0 sixteen height-100 flex super-centered" style="opacity: 0; transform: scale(0.01);">
+                            <div class="relative flex super-centered sixteen height-100" style="background-color: rgba(0, 0, 0, 0.479);">
+                                <div id="map-close" class="absolute right30px top30px z2">
+                                    <span class="material-icons" style="font-size: 50px;">close</span>
+                                </div>
+                                <video id="video" class="scale90" width="1920px" height="1080px" loop>
+                                    <source src="medias/ship.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
                         <div id="map" class="flex super-centered height-100 nine">
                             <div
                                 class="map flex card dark-component height-100 sixteen mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
@@ -436,6 +447,7 @@
     <script src="index.js"></script>
     <script src="hover-animation.js"></script>
     <script src="entrance-animation.js"></script>
+    <script src="map-click-animation.js"></script>
 
 </body>
 

@@ -419,6 +419,9 @@ body {
 .right30px {
   right: 30px;
 }
+.right60px {
+  right: 60px;
+}
 
 .top0 {
   top: 0;
@@ -452,6 +455,9 @@ body {
 }
 .z2 {
   z-index: 2;
+}
+.z20 {
+  z-index: 200;
 }
 
 /* image fit */
@@ -499,6 +505,9 @@ body {
 .scale80 {
   transform: scale(0.8);
 }
+.scale90 {
+  transform: scale(0.9);
+}
 
 /* .perspective-100px {
   perspective: 1000px;
@@ -514,3 +523,13 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+/* opacity */
+
+.opacity-0 {
+  opacity: 0;
+}
+
+
+
+
