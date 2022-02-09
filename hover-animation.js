@@ -13,10 +13,6 @@ var wrapperr = document.querySelector(".wrapper");
 wrapperr.addEventListener("mousemove", mouseMoveFunc);
 wrapperr.addEventListener("mouseleave", out);
 
-function onMouseHover () {
-  
-}
-
 let animId = null;
 let $wrapperEl = wrapperr;
 let wrapperHeight = wrapperr.offsetHeight;
@@ -55,10 +51,15 @@ function mouseMoveFunc(evt) {
   });
 }
 
+var listScrollValue = {
+  value: 0,
+};
 function cardHover() {
   var statsHoverAnim = new gsap.timeline();
   var statsShakes = new gsap.timeline();
   var mapShakes = new gsap.timeline();
+  var listShakes = new gsap.timeline();
+  var listScroll = document.querySelector("#list-content");
 
   statsHoverAnim.to(this, 1, {
     scale: 1.05,
@@ -123,21 +124,25 @@ function cardHover() {
         },
         0.1
       );
-  }
-  else if (this.id == "map") {
-    mapShakes
-      .to(
-        ".map-image",
-        1,
-        {
-          scale: 1.5,
-        },
-      )
+  } else if (this.id == "map") {
+    mapShakes.to(".map-image", 1, {
+      scale: 1.5,
+    });
+  } else if (this.id == "list") {
+    listShakes.to(listScrollValue, 7, {
+      value: listScroll.scrollHeight,
+      duration: 5,
+      ease: Power4.easeOut,
+      onUpdate: function () {
+        listScroll.scrollTo(0, listScrollValue.value);
+      },
+    });
   }
 }
 
 function cardOut() {
   var cardHoverOutAnim = new gsap.timeline();
+  var listScroll = document.querySelector("#list-content");
 
   cardHoverOutAnim.to(this, 1, {
     scale: 1,
@@ -147,6 +152,7 @@ function cardOut() {
 
   var statsShakes = new gsap.timeline();
   var mapShakes = new gsap.timeline();
+  var listShakes = new gsap.timeline();
 
   if (this.id == "stats") {
     statsShakes
@@ -207,13 +213,16 @@ function cardOut() {
         0.1
       );
   } else if (this.id == "map") {
-    mapShakes
-      .to(
-        ".map-image",
-        2,
-        {
-          scale: 1,
-        },
-      )
+    mapShakes.to(".map-image", 2, {
+      scale: 1,
+    });
+  } else if (this.id == "list") {
+    listShakes.to(listScrollValue, 2, {
+      value: 0,
+      ease: Power4.easeOut,
+      onUpdate: function () {
+        listScroll.scrollTo(0, listScrollValue.value);
+      },
+    });
   }
 }
