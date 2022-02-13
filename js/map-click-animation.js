@@ -22,10 +22,9 @@ function mapZoomed() {
 function mapNormalize() {
   video.pause();
 
-  clickMapAnim
-    .to(mapPopup, 1, {
-      opacity: 0,
-      scale: 0.01,
-      ease: Elastic.easeOut.config(1, 0.5),
-    })
+  clickMapAnim.to(mapPopup, 1, {
+    opacity: 0,
+    scale: 0.01,
+    ease: Elastic.easeOut.config(1, 0.5),
+  });
 }

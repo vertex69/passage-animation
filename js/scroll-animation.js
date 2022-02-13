@@ -1,9 +1,18 @@
-var entranceAnim = new gsap.timeline();
+var entranceAnim = new gsap.timeline({
+  scrollTrigger: {
+    trigger: "#master-container",
+    start: "top",
+    end: "+=2000",
+    scrub: 1,
+  },
+});
 var shipCount = document.querySelector(".number");
 
 var ship = {
   count: 0,
 };
+
+// entrance animation
 
 entranceAnim
   .from(".ui-container", 1, {
@@ -143,6 +152,14 @@ entranceAnim
       },
     },
     0.9
-  );
-
+  )
+  // content animation
+  .to("#ui-container", 3, {
+    transform: "rotateY(-6deg)",
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#stats", 3, {
+    scale: 1.08,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  });
 shipCount.innerHTML = ship.count;
