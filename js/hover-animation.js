@@ -61,6 +61,7 @@ function cardHover() {
 
   if (this.id == "stats") {
     statsAnim(
+      statsHoverAnim,
       [
         "100%",
         "80%",

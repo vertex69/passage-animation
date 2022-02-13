@@ -6,10 +6,9 @@ var listScrollValue = {
 var listScroll = document.querySelector("#list-content");
 
 //for statistic card
-function statsAnim(barArray, shipNumber, dashOffset, scaleP) {
-  var statsShakes = new gsap.timeline();
+function statsAnim(timeline, barArray, shipNumber, dashOffset, scaleP) {
 
-  statsShakes
+  timeline
     .to(
       ship,
       0.5,

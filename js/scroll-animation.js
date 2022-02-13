@@ -161,5 +161,5 @@ entranceAnim
   .to("#stats", 3, {
     scale: 1.08,
     ease: Elastic.easeOut.config(0.5, 0.4),
-  });
+  })  
 shipCount.innerHTML = ship.count;
