@@ -6,49 +6,40 @@ var listScrollValue = {
 var listScroll = document.querySelector("#list-content");
 
 //for statistic card
-function statsAnim(timeline, barArray, shipNumber, dashOffset, scaleP) {
-
+function statsAnim(
+  timeline,
+  barArray,
+  shipNumber,
+  dashOffset,
+  scaleP,
+  progress
+) {
   timeline
-    .to(
-      ship,
-      0.5,
-      {
-        count: shipNumber,
-        ease: Power2.easeOut,
-        onUpdate: function () {
-          shipCount.innerHTML = Math.round(ship.count);
-        },
+    .to(ship, progress, {
+      count: shipNumber,
+      ease: Power2.easeOut,
+      onUpdate: function () {
+        shipCount.innerHTML = Math.round(ship.count);
       },
-      0.1
-    )
-    .to(".main-circles", 1, {
+    })
+    .to(".main-circles", progress, {
       strokeDashoffset: gsap.utils.wrap(dashOffset),
       ease: Elastic.easeOut.config(0.5, 0.4),
     })
-    .to(
-      ".bars",
-      1,
-      {
-        height: gsap.utils.wrap(barArray),
-        ease: Elastic.easeOut.config(0.5, 0.4),
-        stagger: {
-          each: 0.08,
-        },
+    .to(".bars", progress, {
+      height: gsap.utils.wrap(barArray),
+      ease: Elastic.easeOut.config(0.5, 0.4),
+      stagger: {
+        each: 0.8,
       },
-      0.1
-    )
-    .to(
-      ".labels",
-      1,
-      {
-        scale: scaleP,
-        ease: Elastic.easeOut.config(0.5, 0.4),
-        stagger: {
-          each: 0.2,
-        },
+    })
+    .to(".labels", progress, {
+      scale: scaleP,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+      stagger: {
+        each: 2,
       },
-      0.1
-    );
+    });
 }
 
 //for map card animation

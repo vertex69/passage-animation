@@ -81,6 +81,6 @@ svg {
 .callout-line {
     width: 50vw;
     border-width: 5px;
-    stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
-    stroke-dashoffset: 300;
+    stroke-dasharray: 450; /* this value is the pixel circumference of the circle */
+    stroke-dashoffset: 100;
 }

@@ -62,26 +62,11 @@ function cardHover() {
   if (this.id == "stats") {
     statsAnim(
       statsHoverAnim,
-      [
-        "100%",
-        "80%",
-        "10%",
-        "50%",
-        "60%",
-        "80%",
-        "40%",
-        "80%",
-        "50%",
-        "70%",
-        "90%",
-        "20%",
-        "60%",
-        "80%",
-        "90%",
-      ],
-      450,
-      [80, 250, 350],
-      1.2
+      statsBarEntrance,
+      statsShipCountsEntrance,
+      statsBarCircles,
+      statsEntranceScale,
+      1
     );
   } else if (this.id == "map") {
     mapAnim(1.5);

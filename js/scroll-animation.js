@@ -1,3 +1,27 @@
+var ship = {
+  count: 0,
+};
+var statsBarEntrance = [
+  "100%",
+  "80%",
+  "10%",
+  "50%",
+  "60%",
+  "80%",
+  "40%",
+  "80%",
+  "50%",
+  "70%",
+  "90%",
+  "20%",
+  "60%",
+  "80%",
+  "90%",
+];
+var statsBarCircles = [80, 250, 350];
+var statsShipCountsEntrance = 450;
+var statsEntranceScale = 1.2;
+
 var entranceAnim = new gsap.timeline({
   scrollTrigger: {
     trigger: "#master-container",
@@ -7,10 +31,6 @@ var entranceAnim = new gsap.timeline({
   },
 });
 var shipCount = document.querySelector(".number");
-
-var ship = {
-  count: 0,
-};
 
 // entrance animation
 
@@ -161,5 +181,14 @@ entranceAnim
   .to("#stats", 3, {
     scale: 1.08,
     ease: Elastic.easeOut.config(0.5, 0.4),
-  })  
+  });
+statsAnim(
+  entranceAnim,
+  statsBarEntrance,
+  statsShipCountsEntrance,
+  statsBarCircles,
+  statsEntranceScale,
+  1.5
+);
+
 shipCount.innerHTML = ship.count;
