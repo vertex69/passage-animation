@@ -34,6 +34,9 @@ body {
 }
 
 /* colors */
+.black {
+  background-color: #141414;
+}
 .red {
   background-color: #ff3452;
 }
