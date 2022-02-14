@@ -214,14 +214,14 @@ statsAnim(
   statsEntranceScale,
   1.5
 );
-callOutLines(
-  entranceAnim,
-  ".callout-line",
-  ".inner-callout-circle",
-  ".outer-callout-circle",
-  stats,
-  ".stats-text"
-);
+// callOutLines(
+//   entranceAnim,
+//   ".callout-line",
+//   ".inner-callout-circle",
+//   ".outer-callout-circle",
+//   stats,
+//   ".stats-text"
+// );
 statsAnim(
   entranceAnim,
   statsBarExit,
@@ -272,6 +272,12 @@ entranceAnim
   .to("#crm", 10, {
     scale: 1,
     ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#crm", 5, {
+    x: "-500px",
+  })
+  .to("#crm", 10, {
+    x: "-1000px",
   })
   .to("#crm", 1, {
     scale: 0,
