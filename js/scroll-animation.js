@@ -265,17 +265,17 @@ entranceAnim
     transform: "rotateY(6deg)",
     ease: Elastic.easeOut.config(0.5, 0.4),
   })
-  // .from("#crm", 10, {
-  //   scale: 0,
-  //   ease: Elastic.easeOut.config(0.5, 0.4),
-  // })
-  // .to("#crm", 10, {
-  //   scale: 1,
-  //   ease: Elastic.easeOut.config(0.5, 0.4),
-  // })
-  // .to("#crm", 1, {
-  //   scale: 0,
-  //   ease: Power4.easeOut,
-  // });
+  .from("#crm", 10, {
+    scale: 0,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#crm", 10, {
+    scale: 1,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#crm", 1, {
+    scale: 0,
+    ease: Power4.easeOut,
+  });
 
 shipCount.innerHTML = ship.count;
