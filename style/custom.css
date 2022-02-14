@@ -84,3 +84,10 @@ svg {
   stroke-dasharray: 450; /* this value is the pixel circumference of the circle */
   stroke-dashoffset: 450;
 }
+
+#shipath {
+  width: 50vw;
+  border-width: 5px;
+  stroke-dasharray: 12000; /* this value is the pixel circumference of the circle */
+  stroke-dashoffset: 0;
+}

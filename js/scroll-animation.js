@@ -239,41 +239,35 @@ entranceAnim
     transform: "rotateY(6deg)",
     ease: Elastic.easeOut.config(0.5, 0.4),
   });
+entranceAnim.to("#map", 3, {
+  scale: 1.08,
+  ease: Elastic.easeOut.config(0.5, 0.4),
+});
+mapZoomed(entranceAnim);
+entranceAnim.to("#ui-container", 3, {
+  transform: "rotateY(-6deg)",
+  ease: Elastic.easeOut.config(0.5, 0.4),
+});
+entranceAnim.from("#message", 5, {
+  scale: 0,
+  ease: Elastic.easeOut.config(0.5, 0.4),
+});
+entranceAnim.to("#message", 10, {
+  scale: 0,
+  ease: Power4.easeOut,
+});
 entranceAnim
-  .to("#map", 3, {
-    scale: 1.08,
+  .to("#ui-container", 3, {
+    transform: "rotateY(6deg)",
     ease: Elastic.easeOut.config(0.5, 0.4),
   })
-  .to(mapPopup, 1, {
-    opacity: 1,
-    scale: 1,
-    ease: Elastic.easeOut.config(1, 0.5),
-    zIndex: 20,
+  .from("#crm", 10, {
+    scale: 0,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#crm", 1, {
+    scale: 0,
+    ease: Power4.easeOut,
   });
-// entranceAnim.to("#ui-container", 3, {
-//   transform: "rotateY(-6deg)",
-//   ease: Elastic.easeOut.config(0.5, 0.4),
-// });
-// entranceAnim.from("#message", 5, {
-//   scale: 0,
-//   ease: Elastic.easeOut.config(0.5, 0.4),
-// });
-// entranceAnim.to("#message", 5, {
-//   scale: 0,
-//   ease: Power4.easeOut,
-// });
-// entranceAnim
-//   .to("#ui-container", 3, {
-//     transform: "rotateY(6deg)",
-//     ease: Elastic.easeOut.config(0.5, 0.4),
-//   })
-//   .from("#crm", 5, {
-//     scale: 0,
-//     ease: Elastic.easeOut.config(0.5, 0.4),
-//   })
-//   .to("#crm", 1, {
-//     scale: 0,
-//     ease: Power4.easeOut,
-//   });
 
 shipCount.innerHTML = ship.count;
