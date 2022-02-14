@@ -248,8 +248,12 @@ entranceAnim.to("#ui-container", 3, {
   transform: "rotateY(-6deg)",
   ease: Elastic.easeOut.config(0.5, 0.4),
 });
-entranceAnim.from("#message", 5, {
+entranceAnim.from("#message", 10, {
   scale: 0,
+  ease: Elastic.easeOut.config(0.5, 0.4),
+});
+entranceAnim.from("#message", 10, {
+  scale: 1,
   ease: Elastic.easeOut.config(0.5, 0.4),
 });
 entranceAnim.to("#message", 10, {
@@ -263,6 +267,10 @@ entranceAnim
   })
   .from("#crm", 10, {
     scale: 0,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#crm", 10, {
+    scale: 1,
     ease: Elastic.easeOut.config(0.5, 0.4),
   })
   .to("#crm", 1, {

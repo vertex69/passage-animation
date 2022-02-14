@@ -14,8 +14,8 @@ function mapZoomed(timeline) {
       ease: Elastic.easeOut.config(1, 0.5),
       zIndex: 20,
     })
-    .from("#shipath", 10, {
-      duration: 10,
+    .from("#shipath", 50, {
+      duration: 50,
       strokeDashoffset: 12000,
     })
     .to(mapPopup, 10, {
