@@ -63,6 +63,66 @@ function listAnim(scrolVal, duration) {
     },
   });
 }
+function callOutLines(
+  timeline,
+  line,
+  circleInner,
+  circleOuter,
+  targetCardPosition,
+  text
+) {
+  var callOutLinesClass = document.querySelector("#callout-lines");
+
+  callOutLinesClass.style.top = targetCardPosition.offsetHeight - 100;
+  callOutLinesClass.style.right = targetCardPosition.offsetWidth - 500;
+
+  timeline
+    .from(circleInner, 1, {
+      scale: 0,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    })
+    .from(circleOuter, 1, {
+      scale: 0,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    })
+    .to(line, 1, {
+      strokeDashoffset: 110,
+    })
+    .from(text, 1, {
+      opacity: 0,
+      ease: Power4.easeOut,
+    })
+    .to(circleInner, 5, {
+      scale: 1,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    })
+    .to(circleOuter, 5, {
+      scale: 1,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    })
+    .to(line, 5, {
+      strokeDashoffset: 110,
+    })
+    .to(text, 5, {
+      opacity: 1,
+      ease: Power4.easeOut,
+    })
+    .to(text, 1, {
+      opacity: 0,
+      ease: Power4.easeOut,
+    })
+    .to(line, 1, {
+      strokeDashoffset: 450,
+    })
+    .to(circleOuter, 1, {
+      scale: 0,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    })
+    .to(circleInner, 1, {
+      scale: 0,
+      ease: Elastic.easeOut.config(0.5, 0.4),
+    });
+}
 
 // //perspective pan animation
 // function perspectivePan(target, progression, degree) {

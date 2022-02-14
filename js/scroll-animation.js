@@ -1,3 +1,5 @@
+var statCard = document.querySelector("#stats");
+
 var ship = {
   count: 0,
 };
@@ -22,11 +24,32 @@ var statsBarCircles = [80, 250, 350];
 var statsShipCountsEntrance = 450;
 var statsEntranceScale = 1.2;
 
+var statsBarExit = [
+  "90%",
+  "20%",
+  "60%",
+  "80%",
+  "90%",
+  "100%",
+  "10%",
+  "30%",
+  "60%",
+  "50%",
+  "10%",
+  "50%",
+  "70%",
+  "80%",
+  "30%",
+];
+var statsBarCirclesExit = [300, 300, 300];
+var statsShipCountsExit = 325;
+var statsScaleExit = 1;
+
 var entranceAnim = new gsap.timeline({
   scrollTrigger: {
     trigger: "#master-container",
     start: "top",
-    end: "+=2000",
+    end: "+=4000",
     scrub: 1,
   },
 });
@@ -182,6 +205,7 @@ entranceAnim
     scale: 1.08,
     ease: Elastic.easeOut.config(0.5, 0.4),
   });
+
 statsAnim(
   entranceAnim,
   statsBarEntrance,
@@ -190,5 +214,66 @@ statsAnim(
   statsEntranceScale,
   1.5
 );
+callOutLines(
+  entranceAnim,
+  ".callout-line",
+  ".inner-callout-circle",
+  ".outer-callout-circle",
+  stats,
+  ".stats-text"
+);
+statsAnim(
+  entranceAnim,
+  statsBarExit,
+  statsShipCountsExit,
+  statsBarCirclesExit,
+  statsScaleExit,
+  1.5
+);
+entranceAnim
+  .to("#stats", 3, {
+    scale: 1,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to("#ui-container", 3, {
+    transform: "rotateY(6deg)",
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  });
+entranceAnim
+  .to("#map", 3, {
+    scale: 1.08,
+    ease: Elastic.easeOut.config(0.5, 0.4),
+  })
+  .to(mapPopup, 1, {
+    opacity: 1,
+    scale: 1,
+    ease: Elastic.easeOut.config(1, 0.5),
+    zIndex: 20,
+  });
+// entranceAnim.to("#ui-container", 3, {
+//   transform: "rotateY(-6deg)",
+//   ease: Elastic.easeOut.config(0.5, 0.4),
+// });
+// entranceAnim.from("#message", 5, {
+//   scale: 0,
+//   ease: Elastic.easeOut.config(0.5, 0.4),
+// });
+// entranceAnim.to("#message", 5, {
+//   scale: 0,
+//   ease: Power4.easeOut,
+// });
+// entranceAnim
+//   .to("#ui-container", 3, {
+//     transform: "rotateY(6deg)",
+//     ease: Elastic.easeOut.config(0.5, 0.4),
+//   })
+//   .from("#crm", 5, {
+//     scale: 0,
+//     ease: Elastic.easeOut.config(0.5, 0.4),
+//   })
+//   .to("#crm", 1, {
+//     scale: 0,
+//     ease: Power4.easeOut,
+//   });
 
 shipCount.innerHTML = ship.count;

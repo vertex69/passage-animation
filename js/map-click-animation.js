@@ -1,30 +1,65 @@
 var map = document.querySelector("#map");
 var mapCloseButton = document.querySelector("#map-close");
 var video = document.querySelector("#video");
-var clickMapAnim = gsap.timeline();
 var mapPopup = document.querySelector("#map-popup");
+var timer = {
+  value: 0,
+};
 
-map.addEventListener("click", mapZoomed);
-mapCloseButton.addEventListener("click", mapNormalize);
+function mapZoomed(timeline) {
+  let src = video.currentSrc || video.src;
+  console.log(video, src);
 
-function mapZoomed() {
-  video.play();
+  /* Make sure the video is 'activated' on iOS */
+  function once(el, event, fn, opts) {
+    var onceFn = function (e) {
+      el.removeEventListener(event, onceFn);
+      fn.apply(this, arguments);
+    };
+    el.addEventListener(event, onceFn, opts);
+    return onceFn;
+  }
 
-  clickMapAnim.to(mapPopup, 1, {
-    opacity: 1,
-    scale: 1,
-    ease: Elastic.easeOut.config(1, 0.5),
+  once(document.documentElement, "touchstart", function (e) {
+    video.play();
+    video.pause();
   });
+
+  /* ---------------------------------- */
+  /* Scroll Control! */
+
+  once(video, "loadedmetadata", () => {
+    timeline.fromTo(
+      video,
+      {
+        currentTime: 0,
+      },
+      {
+        currentTime: video.duration || 1,
+      }
+    );
+  });
+
+  /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, 
+  but it doesn't seem to be a problem now. Possibly based on memory availability? */
+  setTimeout(function () {
+    if (window["fetch"]) {
+      fetch(src)
+        .then((response) => response.blob())
+        .then((response) => {
+          var blobURL = URL.createObjectURL(response);
+
+          var t = video.currentTime;
+          once(document.documentElement, "touchstart", function (e) {
+            video.play();
+            video.pause();
+          });
+
+          video.setAttribute("src", blobURL);
+          video.currentTime = t + 0.01;
+        });
+    }
+  }, 1000);
 
   mapPopup.style.zIndex = 20;
-}
-
-function mapNormalize() {
-  video.pause();
-
-  clickMapAnim.to(mapPopup, 1, {
-    opacity: 0,
-    scale: 0.01,
-    ease: Elastic.easeOut.config(1, 0.5),
-  });
 }

@@ -15,10 +15,21 @@
 <body class="text-white pointer black">
     <div style="height: 700vh;">
         <div class="flex super-centered height-100vh sixteen" style="position: fixed; top: 0;">
-            <div class="absolute flex super-centered"
-                style="height: 150px; width: 300px; transform: rotate(90deg); z-index: 20;">
-                <svg height="100%" width="auto">
-                    <polyline points="20,140 100,20 290,20" class="callout-line" style="fill:none;stroke:white;stroke-width:3" />
+            <div id="callout-lines" class="absolute flex super-centered"
+                style="height: 150px; width: 500px; transform: rotate(90deg); z-index: 20;">
+                <svg height="100%" width="100%">
+                    <text class="stats-text" x="290" y="15" fill="WHITE">TESTING OUT ANIMATION</text>
+                    <text class="stats-text" x="290" y="40" style="font-size: 12px;" fill="WHITE">
+                        <tspan x="290">Lorem ipsum dolor sit amet,</tspan>
+                        <tspan x="290" dy="1.2em">consectetur adipiscing elit, sed do eiusmod tempor</tspan>
+                        <tspan x="290" dy="1.2em">incididunt ut labore et dolore magna aliqua.</tspan>
+                    </text>
+                    <circle class="inner-callout-circle" cx="20" cy="130" r="10" stroke="white" stroke-width="3"
+                        fill="transparent" />
+                    <circle class="outer-callout-circle" cx="20" cy="130" r="5" stroke="white" stroke-width="1"
+                        fill="white" />
+                    <polyline points="20,130 100,20 290,15" class="callout-line"
+                        style="fill:none;stroke:white;stroke-width:3" />
                     Sorry, your browser does not support inline SVG.
                 </svg>
             </div>
@@ -27,6 +38,14 @@
                 style="perspective: 1000px;">
                 <div id="ui-container"
                     class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px">
+                    <!-- <div id="message" class="absolute top0 left0" style="z-index: 30;">
+                        <img src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644776860/passage/Communications_xlu7p8.png"
+                            alt="">
+                    </div>
+                    <div id="crm" class="absolute top0 left0" style="z-index: 30;">
+                        <img src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644776860/passage/Passage_CRM_Scrolled_lpmw5p.png"
+                            alt="">
+                    </div> -->
                     <!-- top menu -->
                     <div id="top-menu" class="top menu dark-component sixteen absolute z2 height-60px flex">
                         <div class="flex two super-centered dark-stroke">
@@ -478,9 +497,9 @@
     <script src="js/animation-function-library.js"></script>
     <script src="js/grouped-animation.js"></script>
     <script src="js/responsive.js"></script>
+    <script src="js/map-click-animation.js"></script>
     <script src="js/scroll-animation.js"></script>
     <script src="js/hover-animation.js"></script>
-    <script src="js/map-click-animation.js"></script>
 
 </body>
 
