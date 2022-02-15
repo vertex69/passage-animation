@@ -3,6 +3,7 @@ var statCard = document.querySelector("#stats");
 var ship = {
   count: 0,
 };
+
 var statsBarEntrance = [
   "100%",
   "80%",
@@ -283,5 +284,3 @@ entranceAnim
     scale: 0,
     ease: Power4.easeOut,
   });
-
-shipCount.innerHTML = ship.count;

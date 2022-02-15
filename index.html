@@ -33,8 +33,7 @@
                     Sorry, your browser does not support inline SVG.
                 </svg>
             </div> -->
-            <div id="master-container"
-                class="container wrapper flex super-centered height-100vh sixteen relative scale40"
+            <div id="master-container" class="container wrapper flex super-centered height-100vh sixteen relative scale40"
                 style="perspective: 1000px;">
                 <div id="ui-container"
                     class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px">
@@ -252,62 +251,13 @@
                                                     </p>
                                                 </div>
                                                 <div class="donut relative height-100 fifteen super-centered flex">
-                                                    <div class="item html">
-                                                        <svg width="160" height="160"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <g>
-                                                                <title>Layer 1</title>
-                                                                <circle class="outer-gray grays" r="70.85699" cy="81"
-                                                                    cx="81" stroke-width="8" stroke="#263241"
-                                                                    fill="none" />
-                                                                <circle class="middle-gray grays" r="50.85699" cy="81"
-                                                                    cx="81" stroke-width="8" stroke="#263241"
-                                                                    fill="none" />
-                                                                <circle class="inner-gray grays" r="30.85699" cy="81"
-                                                                    cx="81" stroke-width="8" stroke="#263241"
-                                                                    fill="none" />
-                                                                <circle class="outer-green main-circles" r="70.85699"
-                                                                    cy="81" cx="81" stroke-width="8" stroke="#23e8a1"
-                                                                    fill="none" />
-                                                                <circle class="middle-yellow main-circles" r="50.85699"
-                                                                    cy="81" cx="81" stroke-width="8" stroke="#fbc059"
-                                                                    fill="none" />
-                                                                <circle class="inner-red main-circles" r="30.85699"
-                                                                    cy="81" cx="81" stroke-width="8" stroke="#ff3452"
-                                                                    fill="none" />
-                                                            </g>
-                                                        </svg>
+                                                    <div id="donut-graph" class="item html">
+                              
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="relative height-70 nine">
-                                                <ul
-                                                    class="absolute sixteen height-100 z2 flex justify-around align-bottom">
-                                                    <li class="bars green half radius-tops-only height-100">&nbsp;</li>
-                                                    <li class="bars yellow half radius-tops-only height-60 ">&nbsp;</li>
-                                                    <li class="bars red half radius-tops-only height-70">&nbsp;</li>
-                                                    <li class="bars green half radius-tops-only height-80 ">&nbsp;</li>
-                                                    <li class="bars yellow half radius-tops-only height-50 ">&nbsp;</li>
-                                                    <li class="bars red half radius-tops-only height-40 ">&nbsp;</li>
-                                                    <li class="bars green half radius-tops-only height-50 ">&nbsp;</li>
-                                                    <li class="bars yellow half radius-tops-only height-30 ">&nbsp;</li>
-                                                    <li class="bars red half radius-tops-only height-40 ">&nbsp;</li>
-                                                    <li class="bars green half radius-tops-only height-70 ">&nbsp;</li>
-                                                    <li class="bars yellow half radius-tops-only height-20 ">&nbsp;</li>
-                                                    <li class="bars red half radius-tops-only height-30 ">&nbsp;</li>
-                                                    <li class="bars green half radius-tops-only height-40 ">&nbsp;</li>
-                                                    <li class="bars yellow half radius-tops-only height-20 ">&nbsp;</li>
-                                                    <li class="bars red half radius-tops-only height-10 ">&nbsp;</li>
-                                                </ul>
-                                                <ul id="stats-axes"
-                                                    class="flex column justify-between absolute sixteen height-100">
-                                                    <li class="lines">&nbsp;</li>
-                                                    <li class="lines">&nbsp;</li>
-                                                    <li class="lines">&nbsp;</li>
-                                                    <li class="lines">&nbsp;</li>
-                                                    <li class="lines">&nbsp;</li>
-                                                    <li class="lines">&nbsp;</li>
-                                                </ul>
+                                            <div id="bar-graph" class="relative height-70 nine">
+                                                
                                             </div>
                                         </div>
                                         <div class="flex width fourteen justify-between">
@@ -493,7 +443,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
@@ -503,13 +452,12 @@
         integrity="sha512-5efjkDjhldlK+BrHauVYJpbjKrtNemLZksZWxd6Wdxvm06dceqWGLLNjZywOkvW7BF032ktHRMUOarbK9d60bg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="js/append-data.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/animation-function-library.js"></script>
     <script src="js/grouped-animation.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/map-click-animation.js"></script>
     <script src="js/scroll-animation.js"></script>
-    <script src="js/hover-animation.js"></script>
 
 </body>
 

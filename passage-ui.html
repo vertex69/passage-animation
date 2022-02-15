@@ -1,0 +1,448 @@
+<div class="flex super-centered height-100vh sixteen" style="position: fixed; top: 0;">
+    <div id="master-container" class="container wrapper flex super-centered height-100vh sixteen relative scale40"
+        style="perspective: 1000px;">
+        <div id="ui-container"
+            class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px">
+            <div id="message" class="absolute" style="left: 200px; z-index: 30; transform: scale(0.0);">
+                <img src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644855950/passage/Communications_-cropped_wk3fbg.png"
+                    alt="">
+            </div>
+            <div id="crm" class="absolute top0 left0" style="z-index: 30;">
+                <img src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644855950/passage/Passage_CRM_Unfold_cropped_cdoxmz.png"
+                    alt="">
+            </div>
+            <!-- top menu -->
+            <div id="top-menu" class="top menu dark-component sixteen absolute z2 height-60px flex">
+                <div class="flex two super-centered dark-stroke">
+                    <div class="logo-container ten">
+                        <img class="logo contain"
+                            src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644224875/passage/passage_myfxm9.png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="flex fourteen justify-between align-center plr30">
+                    <div class="flex super-centered">
+                        <span class="material-icons mr12">
+                            menu
+                        </span>
+                        <input class="radius10 plr20 height-40px dark-base2 no-border text-dirty-white" type="text"
+                            placeholder="Search..">
+                    </div>
+                    <div class="four flex justify-right">
+                        <div class="flex four text-dirty-white dark-stroke-right super-centered">
+                            <span class="message-button material-icons">
+                                email
+                            </span>
+                        </div>
+                        <div class="account flex six super-centered">
+                            <div class="red square30 flex super-centered radius-infinite mr8">
+                                S
+                            </div>
+                            <p class="font-16">Skipper</p>
+                            <span class="material-icons">
+                                arrow_drop_down
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- side menu -->
+            <div class="height-100 flex">
+                <div class="side menu dark-component dark-stroke two flex column pt60">
+                    <ul class=" height-50 flex column justify-between">
+                        <li class="align-center flex column">
+                            <div
+                                class="flex super-centered height-100 height-60px sixteen active radius5 justify-between plr20">
+                                <div class="flex super-centered">
+                                    <span class="side-icons material-icons">
+                                        space_dashboard
+                                    </span>
+                                    <p class="items ml5">Dashboard</p>
+                                </div>
+                                <div>
+                                    <span class="items material-icons">
+                                        arrow_drop_down
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="sixteen flex pb10 text-dirty-white">
+                                <ul class="flex column pl60 flex column">
+                                    <li class="items height-30px">Map</li>
+                                    <li class="items height-30px">Stats</li>
+                                    <li class="items height-30px">Ship Lists</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="align-center flex height-60px plr20 justify-between radius5">
+                            <div class="flex super-centered">
+                                <span class="side-icons material-icons">
+                                    feedback
+                                </span>
+                                <p class="items ml5">Communications</p>
+                            </div>
+                            <div class="items radius10 red plr5">
+                                <p>35</p>
+                            </div>
+                        </li>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="side-icons material-icons">
+                                egg_alt
+                            </span>
+                            <p class="items ml5">My Zones</p>
+                        </li>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="side-icons material-icons">
+                                report
+                            </span>
+                            <p class="items ml5">Reports</p>
+                        </li>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="side-icons material-icons">
+                                contact_page
+                            </span>
+                            <p class="items ml5">Passage CRM</p>
+                        </li>
+                        <li class="align-center flex height-60px plr20">
+                            <span class="side-icons material-icons">
+                                admin_panel_settings
+                            </span>
+                            <p class="items ml5">Admin Settings</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- content -->
+                <div class="content flex super-centered fourteen pt60">
+                    <div class="card-container flex fifteen height-90 justify-between align-center">
+                        <!-- map card -->
+
+                        <div id="map-popup" class="absolute z-2 top0 left0 sixteen height-100 flex super-centered"
+                            style="opacity: 0; transform: scale(0.01);">
+                            <div class="relative flex super-centered sixteen height-100"
+                                style="background-color: rgba(0, 0, 0, 0.479);">
+                                <div id="map-close" class="absolute right30px top30px z2">
+                                    <span class="material-icons" style="font-size: 50px;">close</span>
+                                </div>
+                                <div class="scale90 absolute z2"
+                                    style="width: 1920px; height: 1080px; transform: rotate(90deg); top: -200px;">
+                                    <svg height="1080" width="1920">
+                                        <g id="Layer_1">
+                                            <path id="shipath"
+                                                d="m1674.98551,978.32504l25.0052,-176.66275c1.66133,1.66371 -91.6715,-8.33624 -91.6715,-10.00289c0,-1.66666 -83.33288,33.33315 -88.33285,39.99978c-4.99997,6.66663 -73.33293,28.33318 -74.99959,19.99989c-1.66666,-8.33329 -18.33323,-71.66628 -19.99989,-76.66625c-1.66666,-4.99997 -28.33318,-53.33304 -44.99975,-49.99973c-16.66658,3.33332 -181.66567,56.66636 -183.327,55.00265c1.66132,1.66371 -23.33854,-73.33588 -24.99986,-74.99959c1.66132,1.66371 -85.00487,98.32985 -86.67153,98.32985c-1.66666,0 -124.99932,19.99989 -124.99932,18.33323c0,-1.66666 -66.6663,-151.66584 -66.6663,-153.3325c0,-1.66666 -86.66619,21.66655 -86.66619,23.33321c0,1.66666 14.99992,153.3325 13.33859,151.66879c1.66132,1.66371 -66.67164,29.99689 -73.33827,29.99689c-6.66663,0 -101.66611,0 -104.99943,-6.66663c-3.33332,-6.66663 -79.99956,-131.66595 -79.99956,-134.99926c0,-3.33332 73.33293,-219.9988 71.67161,-221.66251c1.66132,1.66371 178.32703,-36.66942 179.99368,-36.66942c1.66666,0 206.66554,109.9994 214.99883,108.33274c8.33329,-1.66666 104.99943,-56.66636 114.99937,-74.99959c9.99995,-18.33323 59.99967,-79.99956 58.33301,-86.66619c-1.66666,-6.66663 -268.33187,-66.6663 -269.99319,-68.33001c1.66132,1.66371 -28.33851,-33.3361 -31.67183,-33.3361c-3.33332,0 -264.99855,64.99964 -269.99852,69.99962c-4.99997,4.99997 -114.99937,176.6657 -116.66603,173.33239c-1.66666,-3.33332 -66.6663,-159.99913 -68.32763,-161.66283c1.66132,1.66371 309.99297,264.9956 308.33165,263.33189c1.66132,1.66371 128.3273,188.32936 129.99396,188.32936c1.66666,0 594.99675,136.66592 593.33542,135.00221c1.66133,1.66371 176.66037,-5.00292 174.99904,-6.66663c1.66133,1.66371 -33.33848,-25.00281 -34.99981,-26.66652c1.66133,1.66371 -5.0053,76.6633 -5.0053,74.99664c0,-1.66666 69.99962,-19.99989 68.33829,-21.6636c1.66133,1.66371 -140.00457,-50.00268 -140.00457,-51.66933c0,-1.66666 69.99962,-38.33312 68.33829,-39.99683c1.66133,1.66371 -46.67174,121.66305 -48.33307,119.99934c1.66133,1.66371 216.66015,-71.66922 214.99883,-73.33293c1.66133,1.66371 -181.67101,-63.33594 -183.33233,-64.99964c1.66133,1.66371 -180.00435,31.66355 -180.00435,29.99689c0,-1.66666 68.33296,126.66597 58.33301,119.99934c-9.99995,-6.66663 -184.99899,-76.66625 -184.99899,-81.66622c0,-4.99997 56.66636,-336.66483 55.00503,-338.32854c1.66133,1.66371 -153.33783,6.66368 -158.3378,6.66368c-4.99997,0 -114.99937,13.33326 -113.33271,23.33321c1.66666,9.99995 -61.66633,339.99814 -63.33299,341.6648c-1.66666,1.66666 -131.66595,4.99997 -131.66595,3.33332c0,-1.66666 -71.66628,-24.99986 -69.99962,-29.99984c1.66666,-4.99997 141.66589,-266.66521 140.00457,-268.32892c1.66132,1.66371 98.32746,-58.33596 93.32749,-61.66928c-4.99997,-3.33332 -201.66556,-73.33293 -203.32689,-74.99664c1.66132,1.66371 -105.00476,39.99683 -100.00479,18.33028c4.99997,-21.66655 49.99973,-291.66507 44.99975,-291.66507c-4.99997,0 -259.99858,26.66652 -261.6599,25.00281c1.66132,1.66371 -168.33775,113.32976 -166.67109,118.32974c1.66666,4.99997 109.9994,308.33165 108.33808,306.66794c1.66132,1.66371 13.32793,148.32957 11.6666,146.66587c1.66132,1.66371 -133.33794,-16.66952 -131.67128,-16.66952c1.66666,0 -43.3331,-119.99934 -44.99442,-121.66305c1.66132,1.66371 -71.67161,-101.66906 -73.33827,-101.66906c-1.66666,0 348.33143,188.3323 346.67011,186.6686c1.66132,1.66371 113.32738,-58.33596 111.66606,-59.99967c1.66132,1.66371 -60.00501,4.99702 -60.00501,3.33037c0,-1.66666 74.99959,-36.66647 73.33827,-38.33018c1.66132,1.66371 -25.0052,83.32993 -23.33854,78.32996c1.66666,-4.99997 -9.99995,-103.33277 -8.33329,-101.66611c1.66666,1.66666 61.66633,118.33269 61.66633,116.66603c0,-1.66666 -123.33266,-98.3328 -103.33277,-98.3328c19.99989,0 146.66587,13.33326 145.00454,11.66955c1.66132,1.66371 -95.00481,114.99642 -96.66614,113.33271c1.66132,1.66371 38.32779,-130.00224 39.99445,-130.00224"
+                                                stroke="#ff3452" fill="transparent" stroke-width="3" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <video id="video" class="scale90" width="1920px" height="1080px" loop>
+                                    <source src="medias/ship.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <div id="map" class="flex super-centered height-100 nine">
+                            <div
+                                class="map flex card dark-component height-100 sixteen mr12 radius10 shadow-fuzzy overflow-hidden relative z-2 dark-stroke">
+                                <div class="absolute z2 bottom30px right30px">
+                                    <span class="material-icons" style="font-size: 40px;">
+                                        fullscreen
+                                    </span>
+                                </div>
+                                <div class="flex super-centered sixteen absolute z1 top0 height-80px">
+                                    <div class="fourteen height-100 flex justify-between align-center">
+                                        <p class="fontsize22">Map</p>
+                                        <div class="flex text-dirty-white">
+                                            <div
+                                                class="dark-base2 radius10 height-40px flex super-centered plr5 ptb20 mr12">
+                                                <div class="flex super-centered  mr12">
+                                                    <span class="material-icons mr8">
+                                                        edit_calendar
+                                                    </span>
+                                                    <p class="text-dirty-white">
+                                                        08.01.21 - 08.15.21
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <span class="material-icons">
+                                                        arrow_drop_down
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="dark-base2 radius10 height-40px flex super-centered plr5 ptb20">
+                                                <div class="flex super-centered  mr12">
+                                                    <span class="material-icons mr8">
+                                                        directions_boat
+                                                    </span>
+                                                    <p class="text-dirty-white">
+                                                        MARINA - 56489
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <span class="material-icons">
+                                                        arrow_drop_down
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="material-icons">
+                                            more_horiz
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="map-image sixteen height-100 z-1 absolute">
+                                    <img class="cover"
+                                        src="https://res.cloudinary.com/dl5mqatis/image/upload/v1644237736/passage/mock-image-map_ycbeee.png"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="height-100 flex column seven ml12">
+                            <!-- statistic card -->
+                            <div id="stats"
+                                class="stats flex card dark-component sixteen height-40 radius10 mb20 shadow-fuzzy dark-stroke super-centered relative column">
+                                <div class="flex super-centered sixteen align-center absolute z1 top0 height-80px">
+                                    <div class="fourteen height-100 flex justify-between align-center">
+                                        <p class="fontsize22">Statistics</p>
+                                        <span class="material-icons">
+                                            more_horiz
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="height-70 sixteen flex super-centered">
+                                    <div class="height-100 four mr20 relative flex super-centered">
+                                        <div class="absolute height-100 sixteen flex super-centered">
+                                            <p class="flex column super-centered" style="text-align: center;">
+                                                <span class="number"></span> <span>ships</span>
+                                            </p>
+                                        </div>
+                                        <div class="donut relative height-100 fifteen super-centered flex">
+                                            <div class="item html">
+                                                <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+                                                    <g>
+                                                        <title>Layer 1</title>
+                                                        <circle class="outer-gray grays" r="70.85699" cy="81" cx="81"
+                                                            stroke-width="8" stroke="#263241" fill="none" />
+                                                        <circle class="middle-gray grays" r="50.85699" cy="81" cx="81"
+                                                            stroke-width="8" stroke="#263241" fill="none" />
+                                                        <circle class="inner-gray grays" r="30.85699" cy="81" cx="81"
+                                                            stroke-width="8" stroke="#263241" fill="none" />
+                                                        <circle class="outer-green main-circles" r="70.85699" cy="81"
+                                                            cx="81" stroke-width="8" stroke="#23e8a1" fill="none" />
+                                                        <circle class="middle-yellow main-circles" r="50.85699" cy="81"
+                                                            cx="81" stroke-width="8" stroke="#fbc059" fill="none" />
+                                                        <circle class="inner-red main-circles" r="30.85699" cy="81"
+                                                            cx="81" stroke-width="8" stroke="#ff3452" fill="none" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative height-70 nine">
+                                        <ul class="absolute sixteen height-100 z2 flex justify-around align-bottom">
+                                            <li class="bars green half radius-tops-only height-100">&nbsp;</li>
+                                            <li class="bars yellow half radius-tops-only height-60 ">&nbsp;</li>
+                                            <li class="bars red half radius-tops-only height-70">&nbsp;</li>
+                                            <li class="bars green half radius-tops-only height-80 ">&nbsp;</li>
+                                            <li class="bars yellow half radius-tops-only height-50 ">&nbsp;</li>
+                                            <li class="bars red half radius-tops-only height-40 ">&nbsp;</li>
+                                            <li class="bars green half radius-tops-only height-50 ">&nbsp;</li>
+                                            <li class="bars yellow half radius-tops-only height-30 ">&nbsp;</li>
+                                            <li class="bars red half radius-tops-only height-40 ">&nbsp;</li>
+                                            <li class="bars green half radius-tops-only height-70 ">&nbsp;</li>
+                                            <li class="bars yellow half radius-tops-only height-20 ">&nbsp;</li>
+                                            <li class="bars red half radius-tops-only height-30 ">&nbsp;</li>
+                                            <li class="bars green half radius-tops-only height-40 ">&nbsp;</li>
+                                            <li class="bars yellow half radius-tops-only height-20 ">&nbsp;</li>
+                                            <li class="bars red half radius-tops-only height-10 ">&nbsp;</li>
+                                        </ul>
+                                        <ul id="stats-axes"
+                                            class="flex column justify-between absolute sixteen height-100">
+                                            <li class="lines">&nbsp;</li>
+                                            <li class="lines">&nbsp;</li>
+                                            <li class="lines">&nbsp;</li>
+                                            <li class="lines">&nbsp;</li>
+                                            <li class="lines">&nbsp;</li>
+                                            <li class="lines">&nbsp;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex width fourteen justify-between">
+                                    <div class="labels flex super-centered five">
+                                        <p>Permitted</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-green">
+                                                trending_up
+                                            </span>
+                                            <div class="green radius10 plr5 ptb0">
+                                                <p>62%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="labels flex super-centered five">
+                                        <p>Monitoring</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-red">
+                                                trending_down
+                                            </span>
+                                            <div class="red radius10 plr5 ptb0">
+                                                <p>25%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="labels flex super-centered five">
+                                        <p>Unregistered</p>
+                                        <div class="flex">
+                                            <span class="material-icons text-red">
+                                                trending_down
+                                            </span>
+                                            <div class="red radius10 plr5 ptb0">
+                                                <p>13%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list card -->
+                            <div id="list"
+                                class="list card dark-component sixteen height-60 radius10 mt20 shadow-fuzzy dark-stroke relative flex pb20">
+                                <div class="flex super-centered sixteen align-center absolute z1 height-80px">
+                                    <div class="fourteen height-100 flex justify-between align-center">
+                                        <p class="fontsize22">Ships Detected On the Given Area</p>
+                                        <span class="material-icons">
+                                            more_horiz
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center sixteen align-bottom">
+                                    <div id="list-content" class="overflow-x-hidden fourteen height-80 flex scroll">
+                                        <table class="w3-table w3-bordered">
+                                            <tr>
+                                                <th>SHIP NAME</th>
+                                                <th>COUNTRY</th>
+                                                <th>MMSI</th>
+                                                <th>STATUS</th>
+                                                <th>ACTION</th>
+                                            </tr>
+                                            <tr>
+                                                <td>GAN</td>
+                                                <td>USA</td>
+                                                <td>45646</td>
+                                                <td>in review</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>KAYN</td>
+                                                <td>PH</td>
+                                                <td>12315</td>
+                                                <td>denied</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>GONN</td>
+                                                <td>JPN</td>
+                                                <td>86451</td>
+                                                <td>approved</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>LAYAG</td>
+                                                <td>PH</td>
+                                                <td>646556</td>
+                                                <td>denied</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>SHIF</td>
+                                                <td>JPN</td>
+                                                <td>65498</td>
+                                                <td>in review</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Adam</td>
+                                                <td>USA</td>
+                                                <td>86451</td>
+                                                <td>approved</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>MARINA</td>
+                                                <td>USA</td>
+                                                <td>646556</td>
+                                                <td>approved</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>DORFIN</td>
+                                                <td>PH</td>
+                                                <td>646556</td>
+                                                <td>in review</td>
+                                                <td>
+                                                    <span class="material-icons text-green">
+                                                        call
+                                                    </span>
+                                                    <span class="material-icons text-yellow">
+                                                        email
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
