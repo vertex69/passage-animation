@@ -15,26 +15,8 @@
 <body class="text-white pointer black">
     <div style="height: 700vh;">
         <div class="flex super-centered height-100vh sixteen" style="position: fixed; top: 0;">
-            <!-- <div id="callout-lines" class="absolute flex super-centered"
-                style="height: 150px; width: 500px; transform: rotate(90deg); z-index: 20;">
-                <svg height="100%" width="100%">
-                    <text class="stats-text" x="290" y="15" fill="WHITE">TESTING OUT ANIMATION</text>
-                    <text class="stats-text" x="290" y="40" style="font-size: 12px;" fill="WHITE">
-                        <tspan x="290">Lorem ipsum dolor sit amet,</tspan>
-                        <tspan x="290" dy="1.2em">consectetur adipiscing elit, sed do eiusmod tempor</tspan>
-                        <tspan x="290" dy="1.2em">incididunt ut labore et dolore magna aliqua.</tspan>
-                    </text>
-                    <circle class="inner-callout-circle" cx="20" cy="130" r="10" stroke="white" stroke-width="3"
-                        fill="transparent" />
-                    <circle class="outer-callout-circle" cx="20" cy="130" r="5" stroke="white" stroke-width="1"
-                        fill="white" />
-                    <polyline points="20,130 100,20 290,15" class="callout-line"
-                        style="fill:none;stroke:white;stroke-width:3" />
-                    Sorry, your browser does not support inline SVG.
-                </svg>
-            </div> -->
-            <div id="master-container" class="container wrapper flex super-centered height-100vh sixteen relative scale40"
-                style="perspective: 1000px;">
+            <div id="master-container"
+                class="container wrapper flex super-centered height-100vh sixteen relative scale40">
                 <div id="ui-container"
                     class="ui-container dark-base relative height-100 sixteen radius10 overflow-hidden min-width120em min-height500px">
                     <div id="message" class="absolute" style="left: 200px; z-index: 30; transform: scale(0.0);">
@@ -252,48 +234,16 @@
                                                 </div>
                                                 <div class="donut relative height-100 fifteen super-centered flex">
                                                     <div id="donut-graph" class="item html">
-                              
+
                                                     </div>
                                                 </div>
                                             </div>
                                             <div id="bar-graph" class="relative height-70 nine">
-                                                
+
                                             </div>
                                         </div>
-                                        <div class="flex width fourteen justify-between">
-                                            <div class="labels flex super-centered five">
-                                                <p>Permitted</p>
-                                                <div class="flex">
-                                                    <span class="material-icons text-green">
-                                                        trending_up
-                                                    </span>
-                                                    <div class="green radius10 plr5 ptb0">
-                                                        <p>62%</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="labels flex super-centered five">
-                                                <p>Monitoring</p>
-                                                <div class="flex">
-                                                    <span class="material-icons text-red">
-                                                        trending_down
-                                                    </span>
-                                                    <div class="red radius10 plr5 ptb0">
-                                                        <p>25%</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="labels flex super-centered five">
-                                                <p>Unregistered</p>
-                                                <div class="flex">
-                                                    <span class="material-icons text-red">
-                                                        trending_down
-                                                    </span>
-                                                    <div class="red radius10 plr5 ptb0">
-                                                        <p>13%</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div id="stats-label" class="flex width fourteen justify-between">
+
                                         </div>
                                     </div>
                                     <!-- list card -->
@@ -311,128 +261,7 @@
                                         <div class="flex justify-center sixteen align-bottom">
                                             <div id="list-content"
                                                 class="overflow-x-hidden fourteen height-80 flex scroll">
-                                                <table class="w3-table w3-bordered">
-                                                    <tr>
-                                                        <th>SHIP NAME</th>
-                                                        <th>COUNTRY</th>
-                                                        <th>MMSI</th>
-                                                        <th>STATUS</th>
-                                                        <th>ACTION</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>GAN</td>
-                                                        <td>USA</td>
-                                                        <td>45646</td>
-                                                        <td>in review</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>KAYN</td>
-                                                        <td>PH</td>
-                                                        <td>12315</td>
-                                                        <td>denied</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>GONN</td>
-                                                        <td>JPN</td>
-                                                        <td>86451</td>
-                                                        <td>approved</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>LAYAG</td>
-                                                        <td>PH</td>
-                                                        <td>646556</td>
-                                                        <td>denied</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>SHIF</td>
-                                                        <td>JPN</td>
-                                                        <td>65498</td>
-                                                        <td>in review</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Adam</td>
-                                                        <td>USA</td>
-                                                        <td>86451</td>
-                                                        <td>approved</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>MARINA</td>
-                                                        <td>USA</td>
-                                                        <td>646556</td>
-                                                        <td>approved</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>DORFIN</td>
-                                                        <td>PH</td>
-                                                        <td>646556</td>
-                                                        <td>in review</td>
-                                                        <td>
-                                                            <span class="material-icons text-green">
-                                                                call
-                                                            </span>
-                                                            <span class="material-icons text-yellow">
-                                                                email
-                                                            </span>
-                                                        </td>
-                                                    </tr>
 
-                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -452,10 +281,8 @@
         integrity="sha512-5efjkDjhldlK+BrHauVYJpbjKrtNemLZksZWxd6Wdxvm06dceqWGLLNjZywOkvW7BF032ktHRMUOarbK9d60bg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="js/append-data.js"></script>
     <script src="js/index.js"></script>
     <script src="js/grouped-animation.js"></script>
-    <script src="js/responsive.js"></script>
     <script src="js/map-click-animation.js"></script>
     <script src="js/scroll-animation.js"></script>
 

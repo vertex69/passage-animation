@@ -517,9 +517,8 @@ body {
 }
 
 .rotate45 {
-  transform: rotate("45deg")!important;
-} 
-
+  transform: rotate("45deg") !important;
+}
 
 /* cursor */
 
@@ -532,7 +531,3 @@ body {
 .opacity-0 {
   opacity: 0;
 }
-
-
-
-
