@@ -15,13 +15,6 @@ function statsAnim(
   progress
 ) {
   timeline
-    .to(ship, progress, {
-      count: shipNumber,
-      ease: Power2.easeOut,
-      onUpdate: function () {
-        shipCount.innerHTML = Math.round(ship.count);
-      },
-    })
     .to(".main-circles", progress, {
       strokeDashoffset: gsap.utils.wrap(dashOffset),
       ease: Elastic.easeOut.config(0.5, 0.4),
